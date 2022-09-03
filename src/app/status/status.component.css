@@ -1,0 +1,63 @@
+
+.statuscontent1{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+.statuscontent2{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+.updates{
+    width: 400px;
+}
+
+.updatecontent1{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    border-radius: 20px;
+    padding: 5px;
+    
+}
+.updatecontent2{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    border-radius: 20px;
+    padding: 5px;
+}
+.updatecontent3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    border-radius: 20px;
+    padding: 5px;
+}
+.updatecontent4{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+
+@media screen and (max-width:705px){
+    .home img{
+
+        height: 705px;
+    
+    }
+    .homecontent h1{
+        font-size: 40px;
+    }
+}

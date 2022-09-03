@@ -1,0 +1,62 @@
+<!-- <app-nav-bar></app-nav-bar> -->
+<div class="container">
+  <div class="card">
+    <form (ngSubmit)="formSubmit()">
+      <h2>Add new vehicle</h2>
+      <mat-form-field class="field" appearance="outline">
+        <input
+          name="model"
+          [(ngModel)]="data.model"
+          matInput
+          placeholder="vehicle model name"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="field" appearance="outline">
+        <input
+          name="vehicleNumber"
+          [(ngModel)]="data.vehicleNumber"
+          matInput
+          placeholder="Vehicle Number"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="field" appearance="outline">
+        <input
+          name="vehicleType"
+          [(ngModel)]="data.vehicleType"
+          matInput
+          placeholder="Vehicle Type ex - large , small etc"
+        />
+      </mat-form-field>
+      <mat-form-field class="field" appearance="outline">
+        <input
+          name="imgURL"
+          [(ngModel)]="data.imgURL"
+          matInput
+          placeholder="enter image URL of vehicle"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="field" appearance="outline">
+        <input
+          name="userDlNumber"
+          [(ngModel)]="data.userDlNumber"
+          matInput
+          placeholder="Enter driver Driving licence number"
+        />
+      </mat-form-field>
+
+      <div class="btn">
+        <button type="submit" mat-raised-button color="primary" class="btn1">
+          Save
+        </button>
+        <button type="reset" mat-raised-button color="primary" class="btn2">
+          Reset
+        </button>
+      </div>
+    </form>
+
+    <!-- {{ data | json }} -->
+  </div>
+</div>

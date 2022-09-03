@@ -1,0 +1,104 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/home']">
+      <h1>Parcel Delivery Platform</h1>
+    </a>
+
+    <div class="navbar-nav">
+      <a
+        class="nav-link active"
+        aria-current="page"
+        [routerLink]="['/assigned-orders']"
+        >Home</a
+      >
+
+      <a class="nav-link" (click)="(logout)" [routerLink]="['/login']"
+        >Logout</a
+      >
+    </div>
+  </div>
+</nav>
+<h3 class="text-center">Your Total Revenue: {{ revenue }}</h3>
+<h3 class="text-center">Your Vehicle</h3>
+<div class="container">
+  <mat-card class="mat-elevation-z10 vehicle-card">
+    <mat-card-title> Vehicle Model: {{ vehicle.model }} </mat-card-title>
+
+    <div>
+      <mat-card-content
+        >Vehicle Type: {{ vehicle.vehicleType }}
+      </mat-card-content>
+      <mat-card-content
+        >Vehicle Number:
+        {{ vehicle.vehicleNumber }}
+      </mat-card-content>
+    </div>
+    <div>
+      <!-- <img src="vehicle.imgURL" /> -->
+    </div>
+  </mat-card>
+</div>
+<hr />
+<h3 class="text-center">Orders assigned to you</h3>
+<!-- <div>
+  <table>
+    <ul *ngFor="let order of assignedOrderObjArr">
+      <li>OrderID :{{ order.orderId }}</li>
+      <li>Order date :{{ order.orderDate }}</li>
+    </ul>
+  </table>
+</div> -->
+
+<div class="container">
+  <div class="cards" *ngFor="let order of assignedOrderObjArr">
+    <mat-card class="mat-elevation-z10">
+      <mat-card-title> Order ID: {{ order.orderId }} </mat-card-title>
+
+      <div *ngIf="order.deliveryStatus == 'false'">
+        <mat-card-content style="color: red">
+          Order is active
+        </mat-card-content>
+      </div>
+      <div *ngIf="order.deliveryStatus == 'true'">
+        <mat-card-content style="color: blue">
+          Order is completed
+        </mat-card-content>
+      </div>
+
+      <mat-card-content> Time Stamp: {{ order.orderDate }} </mat-card-content>
+
+      <mat-card-content> Order Status: </mat-card-content>
+
+      <mat-form-field class="dropDown">
+        <mat-select
+          [(value)]="selected"
+          (selectionChange)="statusSelected($event.value, order.orderId)"
+          [disabled]="order.deliveryStatus"
+        >
+          <mat-option
+            [value]="sampleStatus.orderStatus"
+            *ngFor="let sampleStatus of sampleOrderStatus"
+            >{{ sampleStatus.orderStatus }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+      <p>{{ status }}</p>
+
+      <mat-card-content>
+        Current PickupStatus: {{ order.pickupStatus }}
+      </mat-card-content>
+      <mat-card-content>
+        Current Delivery Status: {{ order.deliveryStatus }}
+      </mat-card-content>
+      <button
+        [disabled]="order.deliveryStatus"
+        mat-button
+        color="primary"
+        class="btn"
+        (click)="onClick()"
+      >
+        Update Status
+      </button>
+    </mat-card>
+  </div>
+</div>

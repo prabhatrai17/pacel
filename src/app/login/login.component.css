@@ -1,0 +1,9 @@
+.first-div{
+    flex: 1;
+}
+.container{
+    height: 100vh;
+}
+.img-fluid{
+    width: 70%;
+}

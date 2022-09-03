@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/home']">
+      <h1>Parcel Delivery Platform</h1>
+    </a>
+
+    <div class="navbar-nav">
+      <a class="nav-link active" aria-current="page" [routerLink]="['/home']"
+        >Home</a
+      >
+
+      <a
+        class="nav-link"
+        (click)="goToOrder(idRecieved)"
+        [routerLink]="['/orders']"
+        >Your Orders</a
+      >
+
+      <a class="nav-link" (click)="(logout)" [routerLink]="['/login']"
+        >Logout</a
+      >
+      <!-- <li class="nav-item active">
+        <a class="nav-link" routerLink="/user/status"
+          >Status<span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/user/feedback">Feedback</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/user/signup">
+          <img src="assets\img\cc.png" alt="" width="29" height="29" />
+        </a>
+      </li> -->
+    </div>
+  </div>
+</nav>

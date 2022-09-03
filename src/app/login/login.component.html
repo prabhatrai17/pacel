@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="first-div">
+    <h4>Welcome Back,</h4>
+    <h1>Parcel Delivery Platform</h1>
+    <p>Your Goods Deliverd with ease</p>
+    <img
+      class="img-fluid"
+      alt="signup image"
+      src="assets/images/deliverLogin.png"
+    />
+  </div>
+
+  <!-- <div>
+        <h1>Welcome to Parcel Delivery Platform</h1>
+        <p>Your Goods Deliverd with ease</p>
+      </div> -->
+  <div class="card">
+    <h1 class="text-center">Login</h1>
+    <form #submit="ngForm" (ngSubmit)="onSubmit(submit)">
+      <div class="form-group">
+        <label>Email: </label
+        ><input
+          #email="ngModel"
+          type="email"
+          placeholder="Enter your Email"
+          (input)="handleInput($event)"
+          class="form-control"
+          [(ngModel)]="user.email"
+          name="email"
+          required
+        />
+        <p *ngIf="email.touched && email.invalid" class="text-danger">
+          Email required
+        </p>
+      </div>
+      <div class="form-group">
+        <label>Password: </label
+        ><input
+          #pass="ngModel"
+          type="password"
+          placeholder="Enter your Password"
+          (input)="handleInput($event)"
+          class="form-control"
+          [(ngModel)]="user.password"
+          name="password"
+          required
+        />
+        <p *ngIf="pass.touched && pass.invalid" class="text-danger">
+          Password required
+        </p>
+      </div>
+
+      <div class="form-group">
+        <label class="">Your Role : </label>
+        <select
+          #role="ngModel"
+          required
+          [(ngModel)]="user.role"
+          class="select"
+          name="userRole"
+          (input)="onSelected($event)"
+        >
+          <option value="0" selected disabled>Choose User Type</option>
+          <option value="regularUser">Regular User</option>
+          <option value="Driver">Driver</option>
+        </select>
+        <p *ngIf="role.touched && role.invalid" class="text-danger">
+          User type required
+        </p>
+      </div>
+      <div class="text-center">
+        <button
+          *ngIf="email.valid && pass.valid && role.valid"
+          type="submit"
+          class="btn btn-primary"
+        >
+          Submit
+        </button>
+        <button
+          *ngIf="email.invalid || pass.invalid || role.invalid"
+          disabled
+          type="submit"
+          class="btn btn-primary"
+        >
+          Submit
+        </button>
+        <h4 *ngIf="userAccountLoggedin" class="text-success">
+          {{ userAccountLoginStatusMsg }}
+        </h4>
+        <h4 *ngIf="!userAccountLoggedin" class="text-danger">
+          {{ userAccountLoginStatusMsg }}
+        </h4>
+      </div>
+    </form>
+    <div class="row text-center">
+      <p class="col-sm">Don't have account?</p>
+      <p>
+        <a
+          [routerLink]="['/signup']"
+          class="link-primary col-sm"
+          routerLinkActive="router-link-active"
+        >
+          Signup
+        </a>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+.statuscontent1{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+.complain{
+    background-color: darkgrey;
+    width:max-content;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.complaincontent{
+    
+    background-color: rgb(191, 190, 190);
+    padding: 20px 30px;
+    width: max-content;
+    height: max-content;
+}
+.tile1{
+    background-color: darkgrey;
+}
+.updates{
+    width: 400px;
+    padding: 70px 0;
+  border: 3px solid rgb(255, 255, 255);
+  text-align: center;
+}
+
+.updatecontent1{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    border-radius: 20px;
+    padding: 5px;
+    
+}
+.updatecontent2{
+    position: absolute;
+    transform: translate(-50%,50%);
+    border-radius: 20px;
+    padding: 5px;
+}
+.updatecontent3{
+    position: absolute;
+    transform: translate(-50%,50%);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+
+

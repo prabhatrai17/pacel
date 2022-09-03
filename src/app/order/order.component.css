@@ -1,0 +1,8 @@
+.container-fluid{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.trow{
+    line-height: 50px;
+    background-color: aliceblue;
+}

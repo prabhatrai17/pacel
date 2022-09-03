@@ -1,0 +1,36 @@
+<app-nav-bar></app-nav-bar>
+<section class="status">
+  <div class="statuscontent1">
+    <h1>Status</h1>
+  </div>
+  <div class="statuscontent2">
+    <h3>Order Id :{{ orderId }}</h3>
+  </div>
+</section>
+
+<section class="updates">
+  <div class="updatecontent1" [ngStyle]="{ 'background-color': pickupcolor }">
+    <img src="assets\img\pick.png" width="60" height="60" />
+    <div class="message" style="display: inline-block">
+      Package picked up successfully
+    </div>
+  </div>
+</section>
+<section class="updates">
+  <div class="updatecontent2" [ngStyle]="{ 'background-color': dispatchcolor }">
+    <img src="assets\img\dispatch.png" width="60" height="60" />
+    <div class="message" style="display: inline-block">Dispatched</div>
+  </div>
+</section>
+<section class="updates">
+  <div class="updatecontent3" [ngStyle]="{ 'background-color': arrivingcolor }">
+    <img src="assets\img\arriving.png" width="60" height="60" />
+    <div class="message" style="display: inline-block">Arriving Now</div>
+  </div>
+</section>
+<section class="updates">
+  <div class="updatecontent4" [ngStyle]="{ 'background-color': deliverycolor }">
+    <img src="assets\img\delivered.png" width="60" height="60" />
+    <div class="message" style="display: inline-block">Delivered</div>
+  </div>
+</section>

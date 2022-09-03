@@ -1,0 +1,80 @@
+<app-nav-bar></app-nav-bar>
+<nav style="background-color: rgb(6, 10, 77); height: 60px">
+  <h1 class="text-center text-white">Choose your vehicle</h1>
+</nav>
+<!-- <nav style="background-color:rgb(6, 10, 77); height: 60px; "><h1 class="text-center text-white">Choose your vehicle</h1></nav>
+<div class="row text-center">
+
+  <div class="card col" style= "width:2% ; margin-top:2% ;margin-left:5%">
+    <div *ngFor="let v of vehicles" class="container" style="margin-bottom:2% ;">
+      <img [src]="v.imgURL" alt="Avatar" style="width:100%">
+      <h4 style="margin-top:3.5% ;"><b>{{v.model}}</b></h4>
+      <p>{{v.vehicleType}}</p>
+      <button class="btn btn-primary" routerLink="/payment"> SELECT </button>
+    </div>
+  </div>
+
+  <div class="card col" style= "width:2% ; margin-top:2% ;margin-left:5%; margin-right:5%">
+    <img src="https://content.jdmagicbox.com/comp/coimbatore/v4/0422px422.x422.180301200752.m3v4/catalogue/moorthy-sevice-auto-coimbatore-klnlb.jpg" alt="Avatar" style="width:100%">
+    <div class="container text-center" style="margin-top:10% ;">
+      <h4><b>Mr.Driver 2</b></h4>
+      <p>Blue Tata Ace</p>
+      <button class="btn btn-primary" routerLink="/payment"> SELECT </button>
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <button class="btn btn-primary" style=" margin-top:1%; background-color:rgb(8, 43, 157); color:white;" routerLink="/home"> CANCEL </button>
+  </div>
+
+</div> -->
+
+<div class="card" style="margin-top: 10%">
+  <h1 *ngIf="noVehicleAvailable">All Vehicles are occupied, Try again later</h1>
+  <div class="row">
+    <div
+      class="col justify-content-center"
+      *ngFor="let v of vehicles; index as i"
+    >
+      <div class="text-center">
+        <img
+          class="alignment"
+          [src]="v.imgURL"
+          alt="Avatar"
+          style="width: 360px; height: 200px"
+        />
+      </div>
+      <br />
+      <div class="field text-center">
+        <h2>
+          <strong>{{ v.model | uppercase }}</strong>
+        </h2>
+        <hr />
+        <h3>
+          Type : <span>{{ v.vehicleType }}</span>
+        </h3>
+        <h3>
+          Vehicle Number : <span>{{ v.vehicleNumber }}</span>
+        </h3>
+        <div *ngIf="showButtons">
+          <button
+            class="btn btn-primary"
+            (click)="onSelect(i)"
+            routerLink="/payment-verify"
+          >
+            SELECT
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="text-align: center" *ngIf="showButtons">
+  <button
+    class="btn btn-primary"
+    style="margin-top: 1%; background-color: rgb(8, 43, 157); color: white"
+    routerLink="/home"
+  >
+    CANCEL
+  </button>
+</div>

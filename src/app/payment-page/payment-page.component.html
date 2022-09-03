@@ -1,0 +1,86 @@
+<nav style="background-color:rgb(6, 10, 77); height: 60px;"><h1 class="text-center text-white">Payment</h1></nav>
+
+<div style="margin-top:20px ;" class="row text-center">
+  <p style="font-size:30px">Billing Details</p>
+</div>
+<form [formGroup] = 'paymentForm'>
+<div style="float: left ;width: 40% ;margin-left:5%">
+  <input class="form-control" formControlName="name" type="text" name="name" placeholder="Name"><br><br>
+  <input class="form-control" formControlName="cardNo" type="text" name="Card Details" placeholder="Enter your Card Number"><br><br>
+  <input class="form-control" formControlName="expiry" type="text" name="Expiry" placeholder="MM/YYYY"><br><br>
+  <input class="form-control" formControlName="address" type="text" name="Address" placeholder="Address"><br><br>
+  <input class="form-control" formControlName="mobNo" type="text" name="PhNo." placeholder="Mobile Number"><br><br>
+  <input class="form-control" formControlName="city" type="text" name="City" placeholder="City" ><br><br>
+  <select formControlName="state" name="state" id="state" class="form-control" >
+    <option value="" disabled="true">Select State</option>
+    <option value="Andhra Pradesh">Andhra Pradesh</option>
+    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+    <option value="Assam">Assam</option>
+    <option value="Bihar">Bihar</option>
+    <option value="Chandigarh">Chandigarh</option>
+    <option value="Chhattisgarh">Chhattisgarh</option>
+    <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+    <option value="Daman and Diu">Daman and Diu</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Lakshadweep">Lakshadweep</option>
+    <option value="Puducherry">Puducherry</option>
+    <option value="Goa">Goa</option>
+    <option value="Gujarat">Gujarat</option>
+    <option value="Haryana">Haryana</option>
+    <option value="Himachal Pradesh">Himachal Pradesh</option>
+    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+    <option value="Jharkhand">Jharkhand</option>
+    <option value="Karnataka">Karnataka</option>
+    <option value="Kerala">Kerala</option>
+    <option value="Madhya Pradesh">Madhya Pradesh</option>
+    <option value="Maharashtra">Maharashtra</option>
+    <option value="Manipur">Manipur</option>
+    <option value="Meghalaya">Meghalaya</option>
+    <option value="Mizoram">Mizoram</option>
+    <option value="Nagaland">Nagaland</option>
+    <option value="Odisha">Odisha</option>
+    <option value="Punjab">Punjab</option>
+    <option value="Rajasthan">Rajasthan</option>
+    <option value="Sikkim">Sikkim</option>
+    <option value="Tamil Nadu">Tamil Nadu</option>
+    <option value="Telangana">Telangana</option>
+    <option value="Tripura">Tripura</option>
+    <option value="Uttar Pradesh">Uttar Pradesh</option>
+    <option value="Uttarakhand">Uttarakhand</option>
+    <option value="West Bengal">West Bengal</option>
+    </select><br>
+    <button style="margin-left:90%;margin-bottom:3% ; width:120px ;" type="submit" [disabled]="paymentForm.invalid" class="btn btn-primary" (click)="savePayment()" routerLink="/review"> PAY </button>
+   </div>
+</form>
+<div style="float: right; width: 50%; margin-top:5% ;">
+  <div  class="row text-center">
+    <p style="font-size:20px;"><b>Pickup Address</b></p>
+    <p> 63,T.S. Krishna Nagar,Mogappair</p>
+    <p> Chennai,Tamil Nadu 600037</p>
+  </div>
+
+  <div class="row text-center">
+    <p style="font-size:20px;"><b>Delivery Address</b></p>
+    <p> 42,IT Highway,</p>
+    <p> Navalur,Tamil Nadu 603103</p>
+  </div>
+
+  <div class="row text-center">
+    <p style="font-size:20px;"><b>Estimated Cost</b></p>
+    <div style="float: left; width: 50%"><p> Trip Cost</p>
+      <p> GST</p>
+      <p> <b>Total</b></p> </div>
+
+      <div style="float: right; width: 50%"><p> 867</p>
+        <p> 156</p>
+        <p> <b>1023</b></p> </div>
+
+  </div>
+
+</div>
+
+
+
+
+

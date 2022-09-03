@@ -1,0 +1,51 @@
+<app-nav-bar></app-nav-bar>
+<nav style="background-color: rgb(6, 10, 77); height: 60px">
+  <h1 class="text-center text-white">Payment</h1>
+</nav>
+
+<div style="margin-top: 20px" class="container">
+  <form [formGroup]="paymentVerifyForm" class="center">
+    <div>
+      <p style="font-size: 30px">Fill Card Details</p>
+      <input
+        class="form-control"
+        formControlName="cvv"
+        type="number"
+        name="cvv"
+        placeholder="cvv"
+      /><br /><br />
+      <input
+        class="form-control"
+        formControlName="cardNo"
+        type="text"
+        name="Card Details"
+        placeholder="Enter your Card Number"
+      /><br /><br />
+      <input
+        class="form-control"
+        formControlName="expiry"
+        type="text"
+        name="Expiry"
+        placeholder="MM/YYYY"
+      /><br /><br />
+      <input
+        class="form-control"
+        formControlName="pin"
+        type="number"
+        name="pin"
+        placeholder="pin"
+      /><br /><br />
+
+      <br />
+      <button
+        style="margin-bottom: 3%; width: 120px"
+        type="submit"
+        class="btn btn-primary"
+        (click)="savePayment()"
+      >
+        PAY
+      </button>
+      <div *ngIf="response">Payment failed</div>
+    </div>
+  </form>
+</div>

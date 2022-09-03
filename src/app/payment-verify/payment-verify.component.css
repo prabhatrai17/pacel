@@ -1,0 +1,12 @@
+.form-control{
+    width: 250px;
+  }
+.container{
+  display: flex;
+  align-content: center;
+  
+}
+.center{
+  display: flex;
+  align-content: center;
+}

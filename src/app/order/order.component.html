@@ -1,0 +1,86 @@
+<app-nav-bar></app-nav-bar>
+<div class="container-fluid">
+  <div class="card" style="width: 18rem" *ngIf="showItemFlag">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">item id: {{ itemId }}</li>
+      <li class="list-group-item">item Name: {{ itemName }}</li>
+      <li class="list-group-item">item Qty: {{ itemQty }}</li>
+    </ul>
+  </div>
+  <div class="card" style="width: 18rem" *ngIf="showVehicleFlag">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">vehicle id: {{ vehicleObj.id }}</li>
+      <li class="list-group-item">vehicle Model: {{ vehicleObj.model }}</li>
+      <li class="list-group-item">
+        vehile number: {{ vehicleObj.vehicleNumber }}
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h1 class="text-center text-danger">{{ responseMsg }}</h1>
+  </div>
+  <div>
+    <h1 class="text-center text-danger" *ngIf="showOrdersMsg">
+      {{ orderNullMsg }}
+    </h1>
+  </div>
+  <table class="table table-hover">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Order Id</th>
+        <th scope="col">Order Date</th>
+        <th scope="col">Order Pickup address</th>
+        <th scope="col">Order Delivery address</th>
+        <th scope="col">Order Items</th>
+        <th scope="col">Order Status</th>
+        <!-- <th scope="col">Driver assigned</th> -->
+        <th scope="col">Vehicle assigned</th>
+        <!-- <th scope="col">Actions</th> -->
+        <th scope="col">Complain</th>
+        <th scope="col">Feedback</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="trow" *ngFor="let order of orderArray">
+        <th scope="row">{{ order.orderId }}</th>
+        <td>{{ order.orderDate }}</td>
+        <td>pickup add</td>
+        <td>drop add</td>
+        <td
+          role="button"
+          *ngFor="let item of order.item"
+          (click)="showItem(item.itemId)"
+        >
+          <span class="link-primary"> Items</span>
+        </td>
+
+        <td class="link-primary" role="button" (click)="status(order.orderId)">
+          order status
+        </td>
+        <!-- <td>driver1</td> -->
+        <td
+          role="button"
+          class="link-primary"
+          (click)="getVehicle(order.orderId)"
+        >
+          vehicle
+        </td>
+        <!-- <td role="button" class="text-primary">cancel order</td> -->
+        <td
+          class="link-primary"
+          role="button"
+          (click)="complain(order.orderId)"
+        >
+          click
+        </td>
+        <td
+          class="link-primary"
+          role="button"
+          (click)="feedback(order.orderId)"
+        >
+          click
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,41 @@
+<app-nav-bar [idRecieved]="id"></app-nav-bar>
+<div class="container-fluid">
+  <p class="text">Hi,{{ name }}</p>
+  <div class="container">
+    <div class="card bg-gradient mb-3 text-center">
+      <img
+        class="img-fluid"
+        alt="signup image"
+        src="assets/images/delivermy.jpeg"
+        style="height: 100%; width: auto; overflow: hidden"
+      />
+
+      <div class="caption">
+        <a
+          (click)="goToAddGood(id)"
+          [routerLink]="['/add-goods']"
+          class="stretched-link link-primary"
+          ><p class="display-4">Deliver my goods</p>
+          <i class="text-secondary">Place your Order</i>
+        </a>
+      </div>
+    </div>
+
+    <div class="card bg-gradient mb-3 text-center">
+      <img
+        class="img-fluid"
+        alt="signup image"
+        src="assets/images/vechiles.jpg"
+        style="height: 100%; width: auto; overflow: hidden"
+      />
+      <div class="caption">
+        <a [routerLink]="['/vehicle']" class="stretched-link link-primary">
+          <p class="display-4">Vehicles available</p>
+          <i class="text-secondary">check vehicle ready for work </i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div></div>
+</div>

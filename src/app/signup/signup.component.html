@@ -1,0 +1,196 @@
+<div class="container">
+  <div class="first-div">
+    <h4>Welcome to</h4>
+    <h1>Parcel Delivery Platform</h1>
+    <p>Your Goods Deliverd with ease</p>
+    <img class="img-fluid" alt="signup image" src="assets/images/signup.png" />
+  </div>
+
+  <!-- <div>
+      <h1>Welcome to Parcel Delivery Platform</h1>
+      <p>Your Goods Deliverd with ease</p>
+    </div> -->
+  <div class="card">
+    <h1 class="text-center">Signup</h1>
+    <form #submit="ngForm" (ngSubmit)="onSubmit(submit)">
+      <div class="form-group">
+        <label>First Name: </label
+        ><input
+          #fname="ngModel"
+          type="text"
+          placeholder="Enter your first name"
+          (input)="handleInput($event)"
+          class="form-control"
+          [(ngModel)]="user.firstName"
+          name="firstName"
+          required
+        />
+        <p *ngIf="fname.touched && fname.invalid" class="text-danger">
+          First name required
+        </p>
+      </div>
+      <div class="form-group">
+        <label>Last Name: </label
+        ><input
+          #lname="ngModel"
+          placeholder="Enter your last name"
+          (input)="handleInput($event)"
+          class="form-control"
+          [(ngModel)]="user.lastName"
+          name="lastName"
+          required
+        />
+        <p *ngIf="lname.touched && lname.invalid" class="text-danger">
+          Last name required
+        </p>
+      </div>
+
+      <div class="form-group">
+        <label>Email: </label
+        ><input
+          #email="ngModel"
+          type="email"
+          placeholder="Enter your Email"
+          (input)="handleInput($event)"
+          class="form-control"
+          [(ngModel)]="user.email"
+          name="email"
+          required
+        />
+        <p *ngIf="email.touched && email.invalid" class="text-danger">
+          Email required
+        </p>
+      </div>
+      <div class="form-group">
+        <label>Password: </label
+        ><input
+          #pass="ngModel"
+          type="password"
+          placeholder="Enter your Password"
+          (input)="handleInput($event)"
+          class="form-control"
+          [(ngModel)]="user.password"
+          name="password"
+          required
+        />
+        <p *ngIf="pass.touched && pass.invalid" class="text-danger">
+          Password required
+        </p>
+      </div>
+      <div class="form-group">
+        <label>Confirm Password: </label
+        ><input
+          #cpass="ngModel"
+          type="password"
+          placeholder="Enter confirm password"
+          (input)="handleInput($event)"
+          class="form-control"
+          name="confirmPassword"
+          [(ngModel)]="confirmPass"
+          required
+        />
+
+        <p *ngIf="cpass.touched && cpass.invalid" class="text-danger">
+          confirm password required
+        </p>
+        <p
+          *ngIf="cpass.touched && pass.value != cpass.value"
+          class="text-danger"
+        >
+          password not matching
+        </p>
+      </div>
+      <div class="form-group">
+        <label>Mobile Number: </label
+        ><input
+          #mobile="ngModel"
+          maxlength="10"
+          minlength="10"
+          type="number"
+          placeholder="Enter your mobile number"
+          (input)="handleInput($event)"
+          class="form-control"
+          [(ngModel)]="user.mobileNo"
+          name="mobileNumber"
+          required
+        />
+        <p *ngIf="mobile.touched && mobile.invalid" class="text-danger">
+          Mobile number required
+        </p>
+        <p *ngIf="mobile.errors?.['minlength']" class="text-danger">
+          Mobile number must be 10 digit
+        </p>
+      </div>
+
+      <div class="form-group">
+        <label class="">Your Role : </label>
+        <select
+          #role="ngModel"
+          required
+          [(ngModel)]="user.role"
+          class="select"
+          name="userRole"
+          (input)="onSelected($event)"
+        >
+          <option value="0" selected disabled>Choose User Type</option>
+          <option value="regularUser">Regular User</option>
+          <option value="Driver">Driver</option>
+        </select>
+        <p *ngIf="role.touched && role.invalid" class="text-danger">
+          User type required
+        </p>
+      </div>
+      <div class="text-center">
+        <button
+          *ngIf="
+            fname.valid &&
+            lname.valid &&
+            email.valid &&
+            mobile.valid &&
+            pass.valid &&
+            cpass.valid &&
+            role.valid
+          "
+          type="submit"
+          class="btn btn-primary"
+        >
+          Submit
+        </button>
+        <button
+          *ngIf="
+            fname.invalid ||
+            lname.invalid ||
+            email.invalid ||
+            mobile.invalid ||
+            pass.invalid ||
+            cpass.invalid ||
+            role.invalid
+          "
+          disabled
+          type="submit"
+          class="btn btn-primary"
+        >
+          Submit
+        </button>
+        <h2 *ngIf="userAccountNew" class="text-success">
+          {{ userAccountCreationStatusMsg }}
+        </h2>
+        <h2 *ngIf="!userAccountNew" class="text-danger">
+          {{ userAccountCreationStatusMsg }}
+        </h2>
+      </div>
+    </form>
+    <div class="row text-center">
+      <p class="col-sm">Already have account?</p>
+      <p>
+        <a
+          [routerLink]="['/login']"
+          class="link-primary col-sm"
+          routerLinkActive="router-link-active"
+        >
+          Login
+        </a>
+      </p>
+    </div>
+  </div>
+</div>

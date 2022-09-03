@@ -1,0 +1,29 @@
+.btn{
+    background-color: rgb(220, 216, 247);
+}
+.container {
+    margin-top: 20px;
+    /* margin-left: 10%; */
+    /* margin-right: 10%; */
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.cards{
+    width: 80%;
+    margin-top: 2px;    
+    text-indent: 5%;
+    
+}
+.mat-elevation-z10{
+    /* display: flex; */
+   
+}
+.dropDown{
+    width: 25%;
+}
+.vehicle-card{
+    width: 80%;
+}
+

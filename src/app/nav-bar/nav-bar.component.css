@@ -1,0 +1,28 @@
+.container-fluid{
+    display: flex;
+    align-content: center;
+}
+
+.logo{
+    margin-right: 13px;
+}
+.brand-name{
+    color: rgb(0, 0, 0);
+    font-size: 19px;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    color: rgb(0, 136, 255);
+    text-decoration: solid;
+}
+
+
+@media screen and (max-width:705px){
+    .home img{
+
+        height: 705px;
+    
+    }
+    .homecontent h1{
+        font-size: 40px;
+    }
+}

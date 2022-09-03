@@ -1,0 +1,124 @@
+<app-nav-bar></app-nav-bar>
+<nav
+  class="navbar navbar-expand-lg navbar-light"
+  style="background-color: #fdfdfd"
+>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/user/feedback">Feedback</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/user/complain">Complain</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<mat-grid-list cols="2">
+  <mat-grid-tile class="tile1">
+    <section class="complain">
+      <div class="complaincontent">
+        <form [formGroup]="complainForm" (ngSubmit)="onSubmit()">
+          <div class="text-center">Order Id: {{ orderId }}</div>
+          <!-- <div class="form-group">
+            <label for="Order ID">Order ID</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="orderid"
+              id="orderid"
+              [(ngModel)]="complaint.order_id"
+              placeholder="Enter Order ID"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                complainForm.controls['orderid'].dirty &&
+                complainForm.hasError('required', 'email')
+              "
+              >*Order ID is required</span
+            >
+          </div> -->
+          <div class="form-group">
+            <label for="issue">Issue</label>
+
+            <textarea
+              id="issue"
+              [(ngModel)]="complaint.issue"
+              name="issue"
+              rows="4"
+              cols="50"
+              class="form-control"
+              formControlName="issue"
+            >
+            </textarea>
+            <span
+              class="text-danger"
+              *ngIf="
+                complainForm.controls['issue'].dirty &&
+                complainForm.hasError('required', 'issue')
+              "
+              >*Please mention the issue</span
+            >
+          </div>
+          <button
+            type="submit"
+            class="btn btn-success"
+            style="background-color: #0ae9f9"
+            id="submitButton"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+  </mat-grid-tile>
+  <mat-grid-tile class="tile2">
+    <section class="status">
+      <div class="statuscontent1">
+        <h1>Complaint Status</h1>
+      </div>
+    </section>
+    <section class="updates">
+      <div
+        class="updatecontent1"
+        [ngStyle]="{ 'background-color': complaintreceivedcolor }"
+      >
+        <img src="assets\img\complainrecieved.png" width="60" height="60" />
+        <div class="message" style="display: inline-block">
+          Complaint Received
+        </div>
+      </div>
+    </section>
+    <section class="updates">
+      <div
+        class="updatecontent2"
+        [ngStyle]="{ 'background-color': enquiringcolor }"
+      >
+        <img src="assets\img\enquiry.png" width="60" height="60" />
+        <div class="message" style="display: inline-block">Enquiring</div>
+      </div>
+    </section>
+    <section class="updates">
+      <div
+        class="updatecontent3"
+        [ngStyle]="{ 'background-color': actiontakencolor }"
+      >
+        <img src="assets\img\action.png" width="60" height="60" />
+        <div class="message" style="display: inline-block">Action Taken</div>
+      </div>
+    </section>
+  </mat-grid-tile>
+</mat-grid-list>
